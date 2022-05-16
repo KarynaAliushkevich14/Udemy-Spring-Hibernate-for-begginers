@@ -7,4 +7,8 @@ public class BaseballCoach implements Coach {
         return "Do 5 pushups";
     }
 
+    @Override
+    public String getFortune(){
+            return null;};
+
 }

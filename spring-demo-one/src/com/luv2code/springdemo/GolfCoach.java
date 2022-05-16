@@ -5,7 +5,8 @@ public class GolfCoach implements Coach {
     FortuneService fortuneService;
 
     //class constructor
-    GolfCoach(FortuneService theFortuneService){
+    public GolfCoach(FortuneService theFortuneService)
+    {
       fortuneService= theFortuneService;
     }
 
@@ -15,8 +16,9 @@ public class GolfCoach implements Coach {
     }
 
     @Override
+    //use my fortuneService to get a fortune
     public String getFortune(){
-        return "Golf ";
+        return fortuneService.getFortune();
     }
 
 }
