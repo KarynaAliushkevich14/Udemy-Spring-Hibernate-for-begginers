@@ -6,7 +6,6 @@ public class testBean {
 
     public testBean(String theName) {
         name = theName;
-        System.out.println("THIS IS OUT CONSTRUKTOR TestBean");
     }
 
     public String getName() {

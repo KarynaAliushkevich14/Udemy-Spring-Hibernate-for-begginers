@@ -12,4 +12,15 @@
           class="karina.testBean">
         <constructor-arg value="Karo"/>
     </bean>
+
+    <bean id="rockMusicBean"
+          class="InversionOfControl.RockMusic">
+    </bean>
+
+    <bean id="classicalMusicBean"
+          class="InversionOfControl.ClassicalMusic">
+    </bean>
+
+
+
 </beans>
