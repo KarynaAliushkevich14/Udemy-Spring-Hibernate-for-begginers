@@ -14,4 +14,9 @@ public class GolfCoach implements Coach {
         return "Let's play some golf";
     }
 
+    @Override
+    public String getFortune(){
+        return "Golf ";
+    }
+
 }

@@ -6,4 +6,5 @@ public class TrackCoach implements Coach {
     public String getDailyWorkOut(){
         return "Run 1 km";
     }
+
 }
