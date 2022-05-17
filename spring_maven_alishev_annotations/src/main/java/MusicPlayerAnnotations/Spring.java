@@ -9,13 +9,10 @@ public class Spring {
         //but now applicationContext create beans for us with the stroke context:component-scan
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
 
-        //create 2 beans: form Music and from MusicPLayer
-        Music musicC = context.getBean("classicalMusic", Music.class);
+        //define bean with getbean
+        Computer computer = context.getBean("computer", Computer.class);
 
-        MusicPlayer musicPlayerC = new MusicPlayer(musicC);
-
-        //musicPlayer method
-        musicPlayerC.playMusic();
+        System.out.println(computer);
 
         context.close();
 
