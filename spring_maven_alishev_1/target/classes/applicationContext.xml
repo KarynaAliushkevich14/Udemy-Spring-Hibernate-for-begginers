@@ -7,6 +7,7 @@
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context.xsd">
 
+    <context:property-placeholder location="classpath:musicPlayer.properties"/>
 
     <bean id="testBean"
           class="karina.testBean">
@@ -20,6 +21,14 @@
     <bean id="classicalMusicBean"
           class="InversionOfControl.ClassicalMusic">
     </bean>
+
+    <bean id="MusicPlayer"
+          class="InversionOfControl.MusicPlayer">
+        <property name="music" ref="rockMusicBean"/>
+        <property name="name" value="${musicPlayer.name}"/>
+        <property name="volume" value="${musicPlayer.volume}"/>
+    </bean>
+
 
 
 
