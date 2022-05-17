@@ -5,6 +5,18 @@ public class MusicPlayer {
     private String name;
     private int volume;
 
+    //create construct which implement Music music
+    //IoC
+    public MusicPlayer(Music theMusic){
+        music = theMusic;
+    }
+
+    public MusicPlayer(){};
+
+    public void setMusic(Music music){
+        this.music = music;
+     }
+
     public String getName() {
         return name;
     }
@@ -20,18 +32,6 @@ public class MusicPlayer {
     public void setVolume(int volume) {
         this.volume = volume;
     }
-
-    //create construct which implement Music music
-    //IoC
-    public MusicPlayer(Music theMusic){
-        music = theMusic;
-    }
-
-    public MusicPlayer(){};
-
-    public void setMusic(Music music){
-        this.music = music;
-     }
 
     //method
     void playMusic(){

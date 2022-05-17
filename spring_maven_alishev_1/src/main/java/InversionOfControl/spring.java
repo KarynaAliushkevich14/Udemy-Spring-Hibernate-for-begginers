@@ -12,11 +12,18 @@ public class spring {
         //create MusicPlayer
         //MusicPlayer myMusicPlayer = new MusicPlayer(music);
 
-        MusicPlayer myMusicPlayer = context.getBean("MusicPlayer", MusicPlayer.class );
+        MusicPlayer firstMusicPlayer = context.getBean("MusicPlayer", MusicPlayer.class );
+        MusicPlayer secondMusicPlayer = context.getBean("MusicPlayer", MusicPlayer.class );
 
-        myMusicPlayer.playMusic();
-        System.out.println(myMusicPlayer.getName());
-        System.out.println(myMusicPlayer.getVolume());
+        firstMusicPlayer.setVolume(1);
+
+        System.out.println(firstMusicPlayer.getVolume());
+        System.out.println(secondMusicPlayer.getVolume());
+
+        //adding myInit and myDestroy
+        RockMusic rocky = context.getBean("rockMusicBean", RockMusic.class);
+
+
 
         context.close();
     }

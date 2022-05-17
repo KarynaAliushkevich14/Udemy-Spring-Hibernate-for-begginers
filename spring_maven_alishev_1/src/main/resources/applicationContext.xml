@@ -15,16 +15,20 @@
     </bean>
 
     <bean id="rockMusicBean"
-          class="InversionOfControl.RockMusic">
+          class="InversionOfControl.RockMusic"
+            init-method="doMyInit"
+            destroy-method="doMyDestroy">
     </bean>
 
     <bean id="classicalMusicBean"
-          class="InversionOfControl.ClassicalMusic">
+          class="InversionOfControl.ClassicalMusic"
+          factory-method="getClassicalMusic">
     </bean>
 
     <bean id="MusicPlayer"
-          class="InversionOfControl.MusicPlayer">
-        <property name="music" ref="rockMusicBean"/>
+          class="InversionOfControl.MusicPlayer"
+          scope="prototype">
+        <property name="music" ref="classicalMusicBean"/>
         <property name="name" value="${musicPlayer.name}"/>
         <property name="volume" value="${musicPlayer.volume}"/>
     </bean>
