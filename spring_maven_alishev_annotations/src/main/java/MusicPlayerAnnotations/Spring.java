@@ -10,9 +10,22 @@ public class Spring {
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
 
         //define bean with getbean
+        /*
         Computer computer = context.getBean("computer", Computer.class);
 
         System.out.println(computer);
+
+         */
+
+        MusicPlayer musicPlayer = context.getBean("musicPlayer", MusicPlayer.class);
+        System.out.println(musicPlayer.getName());
+        System.out.println(musicPlayer.getVolume());
+
+        //checking if @Scope of ClassicalMusic bean is working
+        ClassicalMusic classicalMusic = context.getBean("classicalMusic", ClassicalMusic.class);
+        ClassicalMusic classicalMusic2 = context.getBean("classicalMusic", ClassicalMusic.class);
+
+        System.out.println(classicalMusic == classicalMusic2);
 
         context.close();
 
