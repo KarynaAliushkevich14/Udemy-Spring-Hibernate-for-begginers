@@ -34,4 +34,25 @@ public class PersonDAO {
          return people.stream().filter(person->person.getId() == id).findAny().orElse(null);
     }
 
+    //3 method
+    //dodajemy osobę do naszej listy
+    public void save (Person person){
+        person.setId(++PEOPLE_COUNT);
+        people.add(person);
+    }
+
+    //3 method
+    //update danych za pomocą konkretnrgo id i osoby
+    public void update(int id, Person updatedPerson){
+        Person personToBeUpdated = showById(id);
+        personToBeUpdated.setName(updatedPerson.getName());
+    }
+
+    //4 method
+    //usuwanie danych za pomocą konkretnrgo id
+    public void delete(int id){
+        people.removeIf(p -> p.getId() == id);
+    }
+
+
 }
