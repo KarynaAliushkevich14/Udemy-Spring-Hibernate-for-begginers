@@ -3,6 +3,8 @@ package myCrud.Model;
 public class Person {
     private int id;
     private String name;
+    private int age;
+    private String email;
 
     public Person(int id, String name) {
         this.id = id;
