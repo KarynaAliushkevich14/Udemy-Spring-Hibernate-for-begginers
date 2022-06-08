@@ -16,10 +16,10 @@ public class PersonDAO {
     {
         people = new ArrayList<Person>();
 
-        people.add (new Person(++PEOPLE_COUNT,"Tom"));
-        people.add (new Person(++PEOPLE_COUNT, "Bob"));
-        people.add (new Person(++PEOPLE_COUNT, "Mike"));
-        people.add (new Person(++PEOPLE_COUNT, "Katy"));
+        people.add (new Person(++PEOPLE_COUNT,"Tom", 24, "tom@mail.ru"));
+        people.add (new Person(++PEOPLE_COUNT, "Bob", 52, "bob@mail.ru"));
+        people.add (new Person(++PEOPLE_COUNT, "Mike", 18, "mike@yahoo.com"));
+        people.add (new Person(++PEOPLE_COUNT, "Katy", 34, "katy@gmail.com"));
     }
 
     //1 method
@@ -45,7 +45,10 @@ public class PersonDAO {
     //update danych za pomocą konkretnrgo id i osoby
     public void update(int id, Person updatedPerson){
         Person personToBeUpdated = showById(id);
+
         personToBeUpdated.setName(updatedPerson.getName());
+        personToBeUpdated.setAge(updatedPerson.getAge());
+        personToBeUpdated.setEmail(updatedPerson.getEmail());
     }
 
     //4 method
